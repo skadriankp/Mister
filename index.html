@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mister - Difusión WhatsApp Moderna</title>
+  <link rel="stylesheet" href="estilo.css"/>
+</head>
+<body>
+  <div class="container" id="main-content">
+    <h1><span class="fancy-title">Mister</span> <span class="subtitle">| Difusión WhatsApp Moderna</span></h1>
+    
+    <section class="qr-section">
+      <div class="qr-header">
+        <img src="https://files.copilotusercontent.com/7b8a6d7c-3b71-42f2-8e63-8a83e3c2a83a/qr-mister-lomos-burgers.png" alt="QR WhatsApp Mister Lomos Burgers" class="qr-img">
+      </div>
+      <h2>Míster Lomos Burgers</h2>
+      <p class="qr-desc">
+        Escanea este código para iniciar un chat de WhatsApp con <b>Míster Lomos Burgers</b>.<br>
+        <a href="https://wa.me/+5493834064747" target="_blank" class="wa-link-qr">O haz click aquí</a>
+      </p>
+    </section>
+
+    <section class="form-section">
+      <div class="actions">
+        <input type="file" id="image-upload" accept="image/*" style="display:none" onchange="handleImageUpload(event)">
+        <button class="main-btn glow" onclick="triggerImageInput()">Agregar imagen</button>
+      </div>
+
+      <div class="input-section">
+        <label>Mensaje para la difusión:</label>
+        <textarea id="message" rows="3" placeholder="Hola, este es un mensaje de difusión..."></textarea>
+      </div>
+
+      <div class="input-section">
+        <label>Agregar número de WhatsApp (solo números, sin + ni espacios):</label>
+        <div class="add-number-row">
+          <input type="text" id="number-input" placeholder="Ej: 5491123456789" maxlength="20" />
+          <button class="main-btn glow" onclick="addNumber()">Agregar número</button>
+        </div>
+        <ul id="number-list"></ul>
+      </div>
+
+      <div class="input-section">
+        <label>Tu link de WhatsApp (para vincular tu cuenta):</label>
+        <input type="text" id="wa-link" placeholder="https://wa.me/5491123456789" style="width:100%" />
+      </div>
+
+      <div class="list-section">
+        <h2>Imágenes:</h2>
+        <div id="image-list" class="img-list"></div>
+      </div>
+
+      <div class="btn-area">
+        <button class="main-btn glow" onclick="sendWhatsApp()">Enviar mensaje masivo</button>
+        <button class="main-btn glow" onclick="openMyWhatsApp()">Entrar con mi WhatsApp</button>
+        <button class="main-btn glow" onclick="clearAll()">Borrar todo</button>
+      </div>
+    </section>
+  </div>
+  <script src="controlador.js"></script>
+</body>
+</html>
